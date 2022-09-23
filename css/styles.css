@@ -20,6 +20,8 @@
   --link-secondary-alternative-color: rgba(255, 255, 255, 0.6);
   /* background color */
   --background-color: #ffffff;
+  --background-hero-color: #c4c4c4;
+  --background-hero-gradient: rgba(47, 48, 58, 0.4);
   --footer-background-color: #2f303a;
   --team-background-color: #f5f4fa;
   /* gap */
@@ -195,10 +197,24 @@ p {
 }
 
 .hero {
+  background-color: var(--background-hero-color);
+}
+
+.hero-background {
   padding-top: 200px;
   padding-bottom: 200px;
 
-  background-color: var(--footer-background-color);
+  max-width: 1600px;
+  margin: 0 auto;
+
+  background-image: linear-gradient(
+      to bottom,
+      var(--background-hero-gradient),
+      var(--background-hero-gradient)
+    ),
+    url('../images/hero.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .hero > .container {
@@ -206,13 +222,16 @@ p {
 }
 
 .hero-title {
-  margin-bottom: 30px;
+  max-width: 696px;
+  margin: 0 auto 30px auto;
+
+  /* margin-bottom: 30px; */
 
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
   letter-spacing: 0.06em;
-  /* text-align: center; */
+  text-align: center;
   text-transform: uppercase;
 
   color: var(--text-secondary-alternative-color);
@@ -235,6 +254,8 @@ p {
   border-radius: var(--button-radius);
   box-shadow: var(--button-hero-shadow);
 
+  display: block;
+  margin: 0 auto;
   padding: 10px 32px;
 }
 
@@ -273,7 +294,12 @@ p {
 .team-list .link-none {
   display: block;
 
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
+}
+
+.foto-conteiner {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .fio {
@@ -294,6 +320,37 @@ p {
 .heading,
 .fio {
   color: var(--text-title-color);
+}
+
+.adv-list > .item::before {
+  width: 270px;
+  height: 120px;
+  margin-bottom: 30px;
+
+  content: '';
+
+  display: block;
+
+  background-color: #f5f4fa;
+  background-position: center;
+  /* background-repeat: no-repeat; */
+  border-radius: 4px;
+}
+
+.icon-antena::before {
+  background-image: url('..//images/antenna.svg');
+}
+
+.icon-clock::before {
+  background-image: url('..//images/clock.svg');
+}
+
+.icon-diagram::before {
+  background-image: url('..//images/diagram.svg');
+}
+
+.icon-austronaut::before {
+  background-image: url('..//images/astronaut.svg');
 }
 
 .adv-list,
@@ -321,7 +378,7 @@ p {
   box-shadow: var(--team-shadow);
   border-radius: var(--team-radius);
 
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */
 }
 
 /* Section body portfolio.html */
@@ -367,16 +424,17 @@ p {
 .card-list {
   display: flex;
   flex-wrap: wrap;
+  gap: var(--cart-gap);
 
-  margin-left: calc(-1 * var(--cart-gap));
-  margin-top: calc(-1 * var(--cart-gap));
+  /* margin-left: calc(-1 * var(--cart-gap));
+  margin-top: calc(-1 * var(--cart-gap)); */
 }
 
 .card-list > .item {
-  flex-basis: calc(100% / 3 - var(--cart-gap));
+  flex-basis: calc((100% - var(--cart-gap) * 2) / 3);
 
-  margin-left: var(--cart-gap);
-  margin-top: var(--cart-gap);
+  /* margin-left: var(--cart-gap);
+  margin-top: var(--cart-gap); */
 }
 
 .card-list .link-none {
