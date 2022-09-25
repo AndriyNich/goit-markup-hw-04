@@ -39,6 +39,8 @@
   /* card */
   --card-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
     0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+  /* svg */
+  --start-svg-color: #afb1b8;
 }
 
 .list-none {
@@ -86,8 +88,8 @@ p {
 
 .picture {
   display: block;
-  /* max-width: 100%;
-  height: auto; */
+  max-width: 100%;
+  height: auto;
 }
 
 .container {
@@ -115,6 +117,7 @@ p {
 .page-header .list {
   display: flex;
   margin-left: auto;
+  align-items: center;
 }
 
 .page-header .list > .item + .item {
@@ -181,16 +184,42 @@ p {
 }
 
 .header-address {
+  display: flex;
+  align-items: center;
+
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
 
   color: var(--link-secondary-color);
+
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 .header-address:hover,
 .header-address:focus {
   color: var(--link-alternative-color);
+}
+
+.span-link {
+  display: inline-block;
+  margin-right: 10px;
+  line-height: 0;
+}
+
+.link-second {
+  display: inline-block;
+}
+
+.header-svg {
+  fill: currentColor;
+  /* var(--link-secondary-color); */
+}
+
+.header-address:hover .header-svg,
+.header-address:focus .header-svg {
+  fill: var(--link-alternative-color);
 }
 
 /* Section body index.html */
@@ -220,15 +249,9 @@ p {
   background-position: center;
 }
 
-/* .hero > .container {
-  text-align: center;
-} */
-
 .hero-title {
   max-width: 696px;
   margin: 0 auto 30px auto;
-
-  /* margin-bottom: 30px; */
 
   font-weight: 900;
   font-size: 44px;
@@ -296,13 +319,12 @@ p {
 
 .team-list .link-none {
   display: block;
-
-  /* margin-bottom: 30px; */
 }
 
 .foto-conteiner {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding: 30px 32px;
+  /* padding-top: 30px;
+    padding-bottom: 30px; */
 }
 
 .fio {
@@ -319,6 +341,10 @@ p {
   text-align: center;
 }
 
+.foto-conteiner > .txt {
+  margin-bottom: 16px;
+}
+
 .subject,
 .heading,
 .fio {
@@ -328,11 +354,25 @@ p {
 .adv-list,
 .do-list {
   display: flex;
-  justify-content: space-between;
+  gap: var(--cart-gap);
 }
 
 .adv-list > .item {
-  width: 270px;
+  width: calc((100% - 3 * var(--cart-gap)) / 4);
+}
+
+.do-list > .item {
+  width: calc((100% - 2 * var(--cart-gap)) / 3);
+}
+
+.adv-before {
+  display: flex;
+  height: 120px;
+  margin-bottom: 30px;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--team-background-color);
 }
 
 .team {
@@ -341,16 +381,72 @@ p {
 
 .team-list {
   display: flex;
-  justify-content: space-between;
+  gap: var(--cart-gap);
 }
 
 .team-list > .item {
+  width: calc((100% - 3 * var(--cart-gap) / 4));
   background-color: var(--background-color);
 
   box-shadow: var(--team-shadow);
   border-radius: var(--team-radius);
+}
 
-  /* padding-bottom: 30px; */
+.soc-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.soc-svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  fill: var(--start-svg-color);
+}
+
+.soc-link {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.soc-link:hover,
+.soc-link:focus {
+  background-color: var(--link-alternative-color);
+}
+
+.soc-link:hover .soc-svg,
+.soc-link:focus .soc-svg {
+  fill: var(--background-color);
+}
+
+/* section Clients */
+
+.clients-list {
+  display: flex;
+  gap: var(--cart-gap);
+}
+
+.client-item {
+}
+
+.client-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 72px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+}
+
+.client-svg {
+  display:block;
+  width: 65%;
+  height: 65%;
 }
 
 /* Section body portfolio.html */
@@ -398,16 +494,10 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: var(--cart-gap);
-
-  /* margin-left: calc(-1 * var(--cart-gap));
-  margin-top: calc(-1 * var(--cart-gap)); */
 }
 
 .card-list > .item {
   flex-basis: calc((100% - var(--cart-gap) * 2) / 3);
-
-  /* margin-left: var(--cart-gap);
-  margin-top: var(--cart-gap); */
 }
 
 .card-list .link-none {
