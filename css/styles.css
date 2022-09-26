@@ -202,19 +202,9 @@ p {
   color: var(--link-alternative-color);
 }
 
-.span-link {
-  display: inline-block;
-  margin-right: 10px;
-  line-height: 0;
-}
-
-.link-second {
-  display: inline-block;
-}
-
 .header-svg {
+  margin-right: 10px;
   fill: currentColor;
-  /* var(--link-secondary-color); */
 }
 
 .header-address:hover .header-svg,
@@ -397,13 +387,6 @@ p {
   justify-content: space-between;
 }
 
-.soc-svg {
-  display: block;
-  width: 20px;
-  height: 20px;
-  fill: var(--start-svg-color);
-}
-
 .soc-link {
   display: flex;
   width: 44px;
@@ -411,6 +394,14 @@ p {
   border-radius: 50%;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
+}
+
+.soc-svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  fill: var(--start-svg-color);
 }
 
 .soc-link:hover,
@@ -428,9 +419,6 @@ p {
 .clients-list {
   display: flex;
   gap: var(--cart-gap);
-}
-
-.client-item {
 }
 
 .client-link {
@@ -455,7 +443,7 @@ p {
 }
 
 .client-link:hover .client-svg,
-.client-link:focus client-svg {
+.client-link:focus .client-svg {
   fill: var(--link-alternative-color);
 }
 /* Section body portfolio.html */
@@ -610,7 +598,7 @@ p {
   gap: 10px;
 }
 
-.connect-link  {
+.connect-link {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
