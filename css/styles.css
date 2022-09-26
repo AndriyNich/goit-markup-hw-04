@@ -438,17 +438,26 @@ p {
   justify-content: center;
   align-items: center;
   width: 170px;
-  height: 72px;
+  height: 92px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+  /* padding: 16px 32px; */
 }
 
 .client-svg {
-  display:block;
-  width: 65%;
-  height: 65%;
+  display: block;
+  fill: #afb1b8;
 }
 
+.client-link:hover,
+.client-link:focus {
+  border-color: var(--link-alternative-color);
+}
+
+.client-link:hover .client-svg,
+.client-link:focus client-svg {
+  fill: var(--link-alternative-color);
+}
 /* Section body portfolio.html */
 
 .filter {
@@ -540,6 +549,14 @@ p {
   background-color: var(--footer-background-color);
 }
 
+.page-footer > .container {
+  display: flex;
+}
+
+.footer-info {
+  margin-right: 70px;
+}
+
 .page-footer .logo {
   display: block;
   margin-bottom: 20px;
@@ -572,4 +589,31 @@ p {
 .footer-link:hover,
 .footer-link:focus {
   color: var(--link-alternative-color);
+}
+
+.connect {
+  max-width: 206px;
+  padding-top: 12px;
+}
+
+.connect > .title {
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  line-height: 1.14;
+  color: var(--text-secondary-alternative-color);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.connect-list {
+  display: flex;
+  gap: 10px;
+}
+
+.connect-link  {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.connect-list .soc-svg {
+  fill: var(--background-color);
 }
