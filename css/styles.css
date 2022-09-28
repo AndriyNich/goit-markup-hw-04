@@ -361,6 +361,7 @@ p {
   align-items: center;
 
   background-color: var(--team-background-color);
+  border-radius: 4px;
 }
 
 .team {
@@ -522,6 +523,7 @@ p {
 }
 
 .card-txt {
+  color: var(--text-color);
   font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.03em;
